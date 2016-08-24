@@ -1,8 +1,12 @@
-text = open('train.txt')
-line = text.readline()
+# text = open('aesw2016(v1.2)_dev.xml')
+# original_file = open('src-val.txt', 'w')
+# edited_file = open('targ-val.txt', 'w')
 
-original_file = open('original.txt', 'w')
-edited_file = open('edited.txt', 'w')
+text = open('test.evaluation.xml')
+original_file = open('src-test.txt', 'w')
+edited_file = open('targ-test.txt', 'w')
+
+line = text.readline()
 
 while line:
 
@@ -47,3 +51,4 @@ while line:
 text.close()
 original_file.close()
 edited_file.close()
+
