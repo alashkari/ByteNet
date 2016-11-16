@@ -17,7 +17,9 @@ cmd:option('-val_data_file','data/demo-val.hdf5', [[Path to validation *.hdf5 fi
 cmd:option('-savefile', 'seq2seq_lstm_attn', [[Savefile name (model will be saved as
                                              savefile_epochX_PPL.t7 where X is the X-th epoch and PPL is
                                              the validation perplexity]])
-cmd:option('-num_shards', 0, [[If the training data has been broken up into different shards,
+cmd:option('-num_shards_train', 0, [[If the training data has been broken up into different shards,
+                             then training files are in this many partitions]])
+cmd:option('-num_shards_val', 0, [[If the training data has been broken up into different shards,
                              then training files are in this many partitions]])
 cmd:option('-train_from', '', [[If training from a checkpoint then this is the path to the pretrained model.]])
 
@@ -960,13 +962,18 @@ function main()
 
   -- Create the data loader class.
   print('loading data...')
-  if opt.num_shards == 0 then
+  if opt.num_shards_train == 0 then
     train_data = data.new(opt, opt.data_file)
   else
     train_data = opt.data_file
   end
+  
+  if opt.num_shards_val == 0 then
+    valid_data = data.new(opt, opt.val_data_file)
+  else
+    valid_data = opt.val_data_file
+  end
 
-  valid_data = data.new(opt, opt.val_data_file)
   print('done!')
   print(string.format('Source vocab size: %d, Target vocab size: %d',
       valid_data.source_size, valid_data.target_size))
