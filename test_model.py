@@ -77,8 +77,8 @@ if __name__ == "__main__":
             except:
                 print("sample " + repr(i) + ": Passed")
                 
-        X[j:,:] = []
-        Y[j:] = []
+        X = X[0:(j-1),:]
+        Y =Y [0:(j-1)]
         X/=np.max(X)
         y_tst = ke.utils.to_categorical(Y, 10)       
                 
