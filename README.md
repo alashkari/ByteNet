@@ -7,7 +7,7 @@ You need to install these packages: os, scipy, resampy, sklearn, numpy, keras(th
 
 ### Decription
 
-In this Project, I intend to train a model to classify short audio(.WAV) files.
+In this Project, I intend to train a model to classify short audio (.WAV) files.
 
 To do so, I decided to apply short-time Fourier transfom (STFT) on audio samples, and pass them to a deep convolutional neural network for classification. Similiar work is done by Alex Graves for speech recognition with RNN (see https://arxiv.org/abs/1303.5778).
 
@@ -27,6 +27,8 @@ All kernel weights are initialized using Glorot (Xavier) normal initializer.
 Max poolig on 2x2 windows after convolution layers.
 
 A fully-connected neural network classifies the samples, and produces the labels in the last layer.
+
+### Experimental Result
 
 For validation, the data set is devided into a training (90%) and test set (10%).
 
