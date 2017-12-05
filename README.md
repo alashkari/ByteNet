@@ -20,3 +20,4 @@ Max poolig on 2x2 windows after convolution layers.
 A fully-connected neural network classifies the samples, and produces the labels in the last layer.
 
 
+![Alt text](WAV_Classifier/Accuracy.png?raw=true "Optional Title")
