@@ -79,6 +79,7 @@ if __name__ == "__main__":
                 
         X[j:,:] = []
         Y[j:] = []
+        X/=np.max(X)
         y_tst = ke.utils.to_categorical(Y, 10)       
                 
     else:
