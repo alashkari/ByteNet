@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec  5 10:25:40 2017
+Created on Mon Dec  4 20:25:40 2017
 
-@author: s2410826
+@author: Amir Lashkari
+ML Test
 """
 import numpy as np
 import sys
