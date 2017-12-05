@@ -52,5 +52,13 @@ Training the model   -->   python train_model.py processed_data_directory
 Testing the model   -->   python test_model.py model_path data_path p  
 (p = 1 for preprocessed data and p = 0 otherwise.)
 
+### Additional Info
+These packages are used for implementing this project:
+
+scipy (0.19.1)
+resampy (0.2.0)
+sklearn  (0.19.0)
+numpy (1.13.3)
+keras (2.0.8) (theano backend, image_dim_ordering: "th")
 
 
