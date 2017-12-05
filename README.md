@@ -43,11 +43,11 @@ Although the test accuracy seems to be low, I believe that altering the sampling
 
 ### Running The Code
 
-Preprocessing the data   -->   python preprocess_data.py <data directory>
+Preprocessing the data   -->   python preprocess_data.py data_directory
 
-Training the model   -->   python train_model.py <processed data directory>
+Training the model   -->   python train_model.py processed_data_directory
   
-Testing the model   -->   python test_model.py <model path> <data path> <p>  # p = 1 for preprocessed data and p = 0 otherwise.
+Testing the model   -->   python test_model.py model_path data_path p  # p = 1 for preprocessed data and p = 0 otherwise.
 
 
 
