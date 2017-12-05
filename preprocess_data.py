@@ -28,33 +28,18 @@ import numpy as np
 
 import keras as ke
 
-def num_samples(mypath):
-    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))] 
-    j=0
-    for i in range(1,(len(onlyfiles)-1)):    
-        adr = mypath + '\\' + onlyfiles[i]
-        try:
-            # Read WAV file from the directory
-            fs, data = wavfile.read(adr)    
-            j+=1
-        except:
-            pass
-
-    return(j)
-
 if __name__ == "__main__":
     
     mypath = sys.argv[1]  
     # mypath = 'C:\\Users\\s2410826\\Desktop\\Test\\Data'
-    NS = num_samples(mypath)
 
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     # adr = mypath + '\\' + onlyfiles[0]
 
     j=0
     FS = 4410
-    X = np.zeros([NS,128**2])
-    Y = np.zeros([NS,1])
+    X = np.zeros([(len(onlyfiles)-1),128**2])
+    Y = np.zeros([(len(onlyfiles)-1),1])
 
 
     for i in range(1,(len(onlyfiles)-1)):
@@ -94,6 +79,8 @@ if __name__ == "__main__":
             print("sample " + repr(i) + ": Passed")
         
 
+    X[j:,:] = []
+    Y[j:] = []
     print("Finished Reading & Preprocessing the dataset!!")
 
     # Splitting the dataset into train and test sets.
