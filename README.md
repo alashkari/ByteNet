@@ -1,5 +1,11 @@
 # WAV_Classifier
 
+### Prerequisite
+
+You need to install these packages: os, scipy, resampy, sklearn, numpy, keras(theano backend, image_dim_ordering: "th")
+
+### Decription
+
 In this Project, I intend to train a model to classify short audio(.WAV) files.
 
 To do so, I decided to apply short-time Fourier transfom (STFT) on audio samples, and pass them to a deep convolutional neural network for classification. Similiar work is done by Alex Graves for speech recognition with RNN (see https://arxiv.org/abs/1303.5778).
