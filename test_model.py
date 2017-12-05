@@ -29,8 +29,6 @@ if __name__ == "__main__":
     if processed==0:
         
         print("Loading & Preprocessing Data!!")
-        
-        NS = num_samples(data_path)
 
         onlyfiles = [f for f in listdir(data_path) if isfile(join(data_path, f))]
         # adr = mypath + '\\' + onlyfiles[0]
@@ -39,7 +37,6 @@ if __name__ == "__main__":
         FS = 4410
         X = np.zeros([(len(onlyfiles)-1),128**2])
         Y = np.zeros([(len(onlyfiles)-1),1])
-
 
         for i in range(1,(len(onlyfiles)-1)):
     
@@ -71,16 +68,17 @@ if __name__ == "__main__":
                 Y[j] = int(onlyfiles[i][-5])
         
                 j+=1
-                print("sample " + repr(i) + ": Read & Preprocessed")
-            
+                print("sample " + repr(i) + ": Read & Preprocessed")            
     
             except:
                 print("sample " + repr(i) + ": Passed")
                 
+                
         X = X[0:(j-1),:]
         Y =Y [0:(j-1)]
         X/=np.max(X)
-        y_tst = ke.utils.to_categorical(Y, 10)       
+        y_tst = ke.utils.to_categorical(Y, 10)      
+        
                 
     else:
         
@@ -100,9 +98,6 @@ if __name__ == "__main__":
     model = load_model(model_path)
     score = model.evaluate(x_tst, y_tst, verbose=0)
     print('Test loss:', score[0])
-    print('Test accuracy:', score[1])
-            
-        
-        
+    print('Test accuracy:', score[1])         
         
         
