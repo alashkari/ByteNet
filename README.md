@@ -37,3 +37,14 @@ I found that the 4.41 KHz sampling rate may be a too small, since by Nyquest the
 The CNN architecture seems to be powerfull enogh to capture the hidden patterns in STFT of audio files. However, appling a RNN seems to be interesting in our problem (in this approach, the STFT may be discarded).
 
 Although the test accuracy seems to be low, I believe that altering the sampling rate will produce a powerfull classifier.
+
+### Running The Code
+
+Preprocessing the data   -->   python preprocess_data.py <data directory>
+
+Training the model   -->   python train_model.py <processed data directory>
+  
+Testing the model   -->   python test_model.py <model path> <data path> <p>  # p = 1 for preprocessed data and p = 0 otherwise.
+
+
+
