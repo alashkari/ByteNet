@@ -79,8 +79,8 @@ if __name__ == "__main__":
             print("sample " + repr(i) + ": Passed")
         
 
-    X[j:,:] = []
-    Y[j:] = []
+    X = X[0:(j-1),:]
+    Y =Y [0:(j-1)]
     print("Finished Reading & Preprocessing the dataset!!")
 
     # Splitting the dataset into train and test sets.
