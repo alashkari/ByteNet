@@ -48,7 +48,7 @@ Preprocessing the data   -->   python preprocess_data.py data_directory
 Training the model   -->   python train_model.py processed_data_directory
   
 Testing the model   -->   python test_model.py model_path data_path p  
-# p = 1 for preprocessed data and p = 0 otherwise.
+(p = 1 for preprocessed data and p = 0 otherwise.)
 
 
 
