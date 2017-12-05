@@ -2,6 +2,7 @@
 
 ### Prerequisite
 
+Python 3.5 or higher is required.
 You need to install these packages: os, scipy, resampy, sklearn, numpy, keras(theano backend, image_dim_ordering: "th")
 
 ### Decription
@@ -13,7 +14,9 @@ To do so, I decided to apply short-time Fourier transfom (STFT) on audio samples
 For loading the audio files, I used wavfile library in scipy package. However, I could not load a fraction of audio samples and I decided not to spend time on this issue.
 
 The sampling frequency is not same for all audio files, so I converted all sampling frequencies to 4.41 KHz.
-For calculating the STFT, the window length in time domain is 277 per segment.
+For calculating the STFT, the window length in time domain is 277 per segment. Below is the STFT of the audio file "1267-9.wav":
+
+![stft](https://user-images.githubusercontent.com/20826407/33621947-6453ed32-d9ba-11e7-9767-417430c2a85d.png)
 
 The CNN classifier has 4 layers.
 Activation function of all convolution layers is ReLU.
