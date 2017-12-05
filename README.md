@@ -37,7 +37,7 @@ Below, you find the training and test accuracy.
 
 I found that the 4.41 KHz sampling rate may be a too small, since by Nyquest theorem we won't be able to reconstruct frequencies above 2.2 KHz. I strongly suggest to try a higher sampling frequency rate.
 
-The CNN architecture seems to be powerfull enogh to capture the hidden patterns in STFT of audio files. However, appling a RNN seems to be interesting in our problem (in this approach, the STFT may be discarded).
+The CNN architecture seems to be powerfull enogh to capture the hidden patterns in STFT of audio files. However, applying a RNN seems to be interesting in our problem (in this approach, the STFT may be discarded).
 
 Although the test accuracy seems to be low, I believe that altering the sampling rate will produce a powerfull classifier.
 
